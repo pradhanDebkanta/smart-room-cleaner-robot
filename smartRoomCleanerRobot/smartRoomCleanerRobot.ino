@@ -1,6 +1,6 @@
 // for front ultrasonic sensor
-const int frontTrigPin = 22;
-const int frontEchoPin = 23;
+const int frontTrigPin = 22;  
+const int frontEchoPin = 23;  
 
 // for left ultrasonic sensor
 const int leftTrigPin = 24;
@@ -50,16 +50,16 @@ int turnD = 16;
 int backword = 15;
 
 // forward speed
-int fLeftSpeed = 50;
-int fRightSpeed = 52;
+int fLeftSpeed = 60;
+int fRightSpeed = 64;
 
 // turn speed
 int tLeftSpeed = 70;
 int tRightSpeed = 72;
 
 // for turn right and left time
-int leftRotateTime = 753;
-int rightRotateTime = 710;
+int leftRotateTime = 1200;
+int rightRotateTime = 1200;
 
 void setup() {
   // put your setup code here, to run once:
@@ -84,7 +84,7 @@ void setup() {
 
   // for serial port communicate speed
   Serial.begin(9600);
-}
+} 
 
 // int flag = 1;
 void loop() {
@@ -93,6 +93,9 @@ void loop() {
     frontDistance = getFrontDistance();
     leftDistance = getLeftDistance();
     rightDistance = getRightDistance();
+    // Serial.println(frontDistance);
+    // Serial.println(leftDistance);
+    // Serial.println(rightDistance);
 
     if (frontDistance > ODS) {
       // speedControl(fLeftSpeed, fRightSpeed);
